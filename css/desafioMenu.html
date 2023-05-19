@@ -7,44 +7,166 @@
     <link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
     <style>
-        /* ... */
+   .cabecalho {
+     background-color: rgb(48, 43, 43);
+     display: flex;
+     flex-direction: row;
+     justify-content: flex-start;
+     align-items: center;
+     border-bottom: solid 3px steelblue;
+     box-sizing: content-box;
+
+   }
+   #imagem {
+    margin: 3%;
+    height: 18%;
+    width: 90%;
+
+   }
+
+   .logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 15%;
+    padding-left: 20px;
+    padding-right: 20px;
+
+   }
+   
+   .autenticacao {
+     display: flex;
+     flex-direction: row;
+     justify-content: space-between;
+     width: 10%;
+     height: 15%;
+     margin-right: 3%;
+     margin-left: auto;
+     align-items: center;
+     text-decoration: none;
+   }
+
+   @media(max-width:600px) {
+    .autenticacao{
+        display: none;
+    }
+   }
+ 
+   .grid{
+    display: flex;
+    justify-content: space-between;
+    width: 25%;
+    margin-left: 1px;
+    font-size: 1.5em;
+   }
+
+   @media(max-width:600px) {
+    .grid{
+        display: none;
+    }
+   }
+
+
+
+   .grid-items:hover {
+    background-color: steelblue;
+   }
+
+   .text {
+    line-height: 2.5em;
+   }
+
+   ul {
+    margin-top: 5px;
+    margin-bottom: 5px;
+   }
+
+   #loguin {
+    font-size: 1.5em;
+   }
+   #loguin:hover{
+    background-color: steelblue;
+   }
+
+   #registrar {
+    font-size: 1.5em;
+   }
+
+   .botao {
+    padding: 10px 20px;
+    border-radius: 25px;
+    margin-left: 5px;
+   }
+
+   .destaque {
+    background-color: rgb(124, 25, 8);
+   }
+
+   a {
+    font-family: 'Oswald';
+    text-decoration: none;
+    color: #fff
+   }
+
+   a:hover{
+    color: #222;
+   }
+
+   li {
+    list-style-type: none;
+   }
+   body {
+    margin: 0;
+   }
+   .menu-toggle{
+    display: none;
+    position: absolute;
+    right: 0px;
+   }
+   @media(max-width:600px){
+    .menu-toggle{
+        display:block;
+    }
+   }
     </style>
 </head>
 
-<body>
+<body onhashchange="hover(event)">
+
     <header class="cabecalho">
         <div class="logo">
             <a href="#inicio">
-                <img src="http://files.cod3r.com.br/curso-web/logo.png" alt="Logo" />
+                <img id="imagem" src="../../logo.png" alt="Logo" />
             </a>
         </div>
+
+            <ul class="grid">
+                <li class="grid-items">
+                    <a class="text" href="#inicio">Início</a>
+                </li>
+                <li class="grid-items">
+                    <a class="text" href="#cursos">Cursos</a>
+                </li>
+                <li class="grid-items">
+                    <a class="text" href="#sobre">Sobre</a>
+                </li>
+                <li class="grid-items">
+                    <a class="text" href="#contato">Contato</a>
+                </li>
+            </ul>
+
+        <aside class="autenticacao">
+            <a id="loguin" class="text" href=#login>Login</a>
+            <a id="registrar" href="#registar" class="botao destaque">Registrar</a>
+        </aside>
         <button class="menu-toggle">
             <i class="fa fa-lg fa-bars"></i>
         </button>
-        <nav class="menu">
-            <ul>
-                <li>
-                    <a href="#inicio">Início</a>
-                </li>
-                <li>
-                    <a href="#cursos">Cursos</a>
-                </li>
-                <li>
-                    <a href="#sobre">Sobre</a>
-                </li>
-                <li>
-                    <a href="#contato">Contato</a>
-                </li>
-            </ul>
-        </nav>
-        <aside class="autenticacao">
-            <a href="#login">Login</a>
-            <a href="#registar" class="botao destaque">Registrar</a>
-        </aside>
     </header>
 
     <script>
-        // ...
+
     </script>
 </body>
 
