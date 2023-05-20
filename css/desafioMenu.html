@@ -7,128 +7,109 @@
     <link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
     <style>
-   .cabecalho {
-     background-color: rgb(48, 43, 43);
-     display: flex;
-     flex-direction: row;
-     justify-content: flex-start;
-     align-items: center;
-     border-bottom: solid 3px steelblue;
-     box-sizing: content-box;
+        * {
+            box-sizing: border-box;
+        }
 
-   }
-   #imagem {
-    margin: 3%;
-    height: 18%;
-    width: 90%;
+        body {
+            margin: 0;
+            font-family: 'Oswald', sans-serif;
+            background-color: lightgray;
+        }
 
-   }
+        .cabecalho {
+            background-color: #333;
+            border-bottom: solid 5px #4faddb;
+            height: 80px;
+            box-sizing: content-box;
+        }
 
-   .logo {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    width: 15%;
-    padding-left: 20px;
-    padding-right: 20px;
+        .logo {
+            display: inline-block;
+            height: 80px;
+            padding: 15px;
+        }
 
-   }
-   
-   .autenticacao {
-     display: flex;
-     flex-direction: row;
-     justify-content: space-between;
-     width: 10%;
-     height: 15%;
-     margin-right: 3%;
-     margin-left: auto;
-     align-items: center;
-     text-decoration: none;
-   }
+        .logo img {
+            height: 100%;
+        }
 
-   @media(max-width:600px) {
-    .autenticacao{
-        display: none;
-    }
-   }
- 
-   .grid{
-    display: flex;
-    justify-content: space-between;
-    width: 25%;
-    margin-left: 1px;
-    font-size: 1.5em;
-   }
+        .menu-toggle {
+            float: right;
+            color: #eee;
+            background-color: #555;
+            border: solid 1px #777;
+            border-radius: 5px;
+            height: 40px;
+            padding: 10px 20px;
+            margin: 20px 15px;
+        }
 
-   @media(max-width:600px) {
-    .grid{
-        display: none;
-    }
-   }
+        .menu {
+            display: inline-block;
+            vertical-align: top;
+            height: 80px;
+            padding: 25px;
+        }
 
+        .menu ul {
+            margin: 0;
+            padding: 0;
+        }
 
+        .menu li {
+            display: inline-block;
+        }
 
-   .grid-items:hover {
-    background-color: steelblue;
-   }
+        .cabecalho a {
+            text-decoration: none;
+            color: #eee;
+            font-size: 1.3em;
+        }
 
-   .text {
-    line-height: 2.5em;
-   }
+        .autenticacao {
+            float: right;
+            height: 80px;
+            padding: 25px;
+        }
+        .menu a {
+            padding: 15px;
+        }
 
-   ul {
-    margin-top: 5px;
-    margin-bottom: 5px;
-   }
+        .menu a:hover,
+        .menu a.selected {
+            background-color: #4faddb;
+            color: #000;
+        }
 
-   #loguin {
-    font-size: 1.5em;
-   }
-   #loguin:hover{
-    background-color: steelblue;
-   }
+        .botao {
+            border-radius: 30px;
+            padding: 10px 25px;
+            margin: 10px;
+        }
 
-   #registrar {
-    font-size: 1.5em;
-   }
+        .destaque {
+            background-color: #f50a31;
+            color: #fff;
+        }
 
-   .botao {
-    padding: 10px 20px;
-    border-radius: 25px;
-    margin-left: 5px;
-   }
+        @media(min-width: 670px) {
+            .menu-toggle {
+                display: none;
+            }
+        }
 
-   .destaque {
-    background-color: rgb(124, 25, 8);
-   }
+        @media(max-width: 680px) {
+            .menu {
+                display: none;
+            }
+        }
 
-   a {
-    font-family: 'Oswald';
-    text-decoration: none;
-    color: #fff
-   }
-
-   a:hover{
-    color: #222;
-   }
-
-   li {
-    list-style-type: none;
-   }
-   body {
-    margin: 0;
-   }
-   .menu-toggle{
-    display: none;
-    position: absolute;
-    right: 0px;
-   }
-   @media(max-width:600px){
-    .menu-toggle{
-        display:block;
-    }
-   }
+        @media(max-width: 910px) {
+            .autenticacao {
+                display: none;
+            }
+        }
     </style>
 </head>
 
@@ -140,33 +121,41 @@
                 <img id="imagem" src="../../logo.png" alt="Logo" />
             </a>
         </div>
-
-            <ul class="grid">
-                <li class="grid-items">
-                    <a class="text" href="#inicio">Início</a>
-                </li>
-                <li class="grid-items">
-                    <a class="text" href="#cursos">Cursos</a>
-                </li>
-                <li class="grid-items">
-                    <a class="text" href="#sobre">Sobre</a>
-                </li>
-                <li class="grid-items">
-                    <a class="text" href="#contato">Contato</a>
-                </li>
-            </ul>
-
-        <aside class="autenticacao">
-            <a id="loguin" class="text" href=#login>Login</a>
-            <a id="registrar" href="#registar" class="botao destaque">Registrar</a>
-        </aside>
         <button class="menu-toggle">
             <i class="fa fa-lg fa-bars"></i>
         </button>
+          <nav class="menu">
+            <ul>
+                <li>
+                    <a href="#inicio">Início</a>
+                </li>
+                <li >
+                    <a href="#cursos">Cursos</a>
+                </li>
+                <li>
+                    <a href="#sobre">Sobre</a>
+                </li>
+                <li>
+                    <a href="#contato">Contato</a>
+                </li>
+            </ul>
+        </nav>
+        <aside class="autenticacao">
+            <a href=#login>Login</a>
+            <a href="#registar" class="botao destaque">Registrar</a>
+        </aside>
+
     </header>
 
     <script>
-
+       window.onhashchange = function(e) {
+        const oldURL = e.oldURL.split('#')[1]
+        const newURL = e.newURL.split('#')[1]
+        const oldLink = document.querySelector(`.menu a[href='#${oldURL}']`)
+        const newLink = document.querySelector(`.menu a[href='#${newURL}']`)
+        oldLink && oldLink.classList.remove('selected')
+        newLink && newLink.classList.add('selected')
+       }
     </script>
 </body>
 
